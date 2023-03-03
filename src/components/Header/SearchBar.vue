@@ -1,5 +1,31 @@
-<script></script>
+<script>
+import { store } from "../../store";
+export default {
+  data() {
+    return {
+      variabileX: "",
+      store,
+    };
+  },
+  created() {},
+  methods: {},
+};
+</script>
 
-<template></template>
+<template>
+  <div>
+    <form
+      action="#"
+      @submit.prevent="$emit('search')"
+    >
+      <input
+        type="text"
+        v-model="store.userInput"
+        placeholder="Search Movie/Tv Series"
+      />
+      <button type="submit">Ricerca</button>
+    </form>
+  </div>
+</template>
 
-<style></style>
+<style lang="scss"></style>
