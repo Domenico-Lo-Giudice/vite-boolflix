@@ -19,8 +19,15 @@ export default {
             this.store.userInput
         )
         .then((response) => {
-          this.store.userOutcome = response.data.results;
-          // console.log(this.store.userOutcome);
+          this.store.movieOutcome = response.data.results;
+        });
+      axios
+        .get(
+          "https://api.themoviedb.org/3/search/tv?api_key=3ddad31363e335e702734af33371ae8b&query=" +
+            this.store.userInput
+        )
+        .then((response) => {
+          this.store.seriesOutcome = response.data.results;
         });
     },
   },

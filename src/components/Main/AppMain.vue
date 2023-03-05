@@ -1,5 +1,7 @@
 <script>
 import { store } from "../../store";
+import AppMovie from "./AppMovie.vue";
+import AppTvSeries from "./AppTvSeries.vue";
 export default {
   data() {
     return {
@@ -8,32 +10,17 @@ export default {
   },
   created() {},
   methods: {},
+  components: {
+    AppMovie,
+    AppTvSeries,
+  },
 };
 </script>
 
 <template>
   <div>
-    <div v-for="element in this.store.userOutcome">
-      <div>
-        <!-- titolo -->
-        {{ element.title }}
-      </div>
-
-      <div>
-        <!-- titolo originale -->
-        {{ element.original_title }}
-      </div>
-
-      <div>
-        <!-- lingua -->
-        {{ element.original_language }}
-      </div>
-
-      <div>
-        <!-- valutazione -->
-        {{ element.vote_average }}
-      </div>
-    </div>
+    <AppMovie />
+    <AppTvSeries />
   </div>
 </template>
 
