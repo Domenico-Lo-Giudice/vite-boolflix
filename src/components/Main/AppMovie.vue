@@ -13,26 +13,62 @@ export default {
 
 <template>
   <div v-for="element in this.store.movieOutcome">
-    <div>
-      <!-- titolo -->
-      {{ element.title }}
-    </div>
+    <div class="showCont mx-2">
+      <div class="imgShow">
+        <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" />
+        <div
+          class="infoShow d-flex flex-column justify-content-center align-items-center text-center"
+        >
+          <div>
+            <!-- titolo -->
+            {{ element.title }}
+          </div>
 
-    <div>
-      <!-- titolo originale -->
-      {{ element.original_title }}
-    </div>
+          <div>
+            <!-- titolo originale -->
+            {{ element.original_title }}
+          </div>
 
-    <div>
-      <!-- lingua -->
-      {{ element.original_language }}
-    </div>
+          <div>
+            <!-- lingua -->
+            {{ element.original_language }}
+          </div>
 
-    <div>
-      <!-- valutazione -->
-      {{ element.vote_average }}
+          <div>
+            <!-- valutazione -->
+            {{ element.vote_average }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.imgShow {
+  position: relative;
+  width: 260px;
+  height: 400px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.infoShow {
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-size: 30px;
+  background-color: black;
+  visibility: hidden;
+}
+
+.imgShow:hover .infoShow {
+  visibility: visible;
+}
+</style>
