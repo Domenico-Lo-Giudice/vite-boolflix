@@ -7,7 +7,13 @@ export default {
     };
   },
   created() {},
-  methods: {},
+  methods: {
+    getFlag(country) {
+      country = country.toUpperCase();
+
+      return "https://flagsapi.com/" + country + "/flat/64.png";
+    },
+  },
 };
 </script>
 
@@ -31,7 +37,7 @@ export default {
 
           <div>
             <!-- lingua -->
-            {{ element.original_language }}
+            <img :src="getFlag(element.original_language)" />
           </div>
 
           <div>
