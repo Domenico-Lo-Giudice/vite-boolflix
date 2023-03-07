@@ -16,6 +16,7 @@ export default {
       if (country == "HI") return "https://flagsapi.com/GB/flat/64.png";
       if (country == "JA") return "https://flagsapi.com/JP/flat/64.png";
       if (country == "KO") return "https://flagsapi.com/KR/flat/64.png";
+      if (country == "ZH") return "https://flagsapi.com/CN/flat/64.png";
       return "https://flagsapi.com/" + country + "/flat/64.png";
     },
   },
