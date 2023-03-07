@@ -11,6 +11,11 @@ export default {
     getFlag(country) {
       country = country.toUpperCase();
 
+      if (country == "EN") return "https://flagsapi.com/GB/flat/64.png";
+      if (country == "CS") return "https://flagsapi.com/GB/flat/64.png";
+      if (country == "HI") return "https://flagsapi.com/GB/flat/64.png";
+      if (country == "JA") return "https://flagsapi.com/JP/flat/64.png";
+      if (country == "KO") return "https://flagsapi.com/KR/flat/64.png";
       return "https://flagsapi.com/" + country + "/flat/64.png";
     },
   },
