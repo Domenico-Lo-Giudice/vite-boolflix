@@ -19,6 +19,12 @@ export default {
       if (country == "ZH") return "https://flagsapi.com/CN/flat/64.png";
       return "https://flagsapi.com/" + country + "/flat/64.png";
     },
+
+    Rating(stars) {
+      let vote = stars;
+      vote = Math.ceil(stars / 2);
+      return vote;
+    },
   },
 };
 </script>
@@ -48,7 +54,12 @@ export default {
 
           <div>
             <!-- valutazione -->
-            {{ element.vote_average }}
+            <span v-for="n in Rating(element.vote_average)"> &#9733; </span>
+
+            <span v-for="n in 5 - Rating(element.vote_average)">
+              &#9734;
+              <!--fine valutazione-->
+            </span>
           </div>
         </div>
       </div>
